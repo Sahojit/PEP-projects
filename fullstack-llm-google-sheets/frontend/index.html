@@ -1,0 +1,49 @@
+<!DOCTYPE strict>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat & Sheets Exporter</title>
+    <!-- Use Inter font for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="app-container glass-panel">
+        <header>
+            <h1>AI Assistant</h1>
+            <p class="subtitle">Powered by Open Source LLM & Google Sheets</p>
+        </header>
+
+        <section class="chat-interface">
+            <div id="chat-history" class="chat-history">
+                <div class="message system-message">
+                    Hello! I'm your local AI assistant. How can I help you today?
+                </div>
+            </div>
+
+            <div class="input-area">
+                <textarea id="prompt-input" placeholder="Type your message here..." rows="1"></textarea>
+                <div class="action-buttons">
+                    <button id="send-btn" class="primary-btn" title="Send message">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                    <button id="export-btn" class="secondary-btn" title="Export last response to Google Sheet" disabled>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="status-message" class="status-message"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
