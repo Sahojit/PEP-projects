@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Guesser</title>
+</head>
+<body>
+    <h1>Think of a Number (0–9)</h1>
+
+    {% if question %}
+        <p><b>{{ question }}</b></p>
+        <form method="post">
+            <button name="answer" value="yes">Yes</button>
+            <button name="answer" value="no">No</button>
+        </form>
+    {% elif result is not none %}
+        <h2>🎉 Your number is: {{ result }}</h2>
+        <a href="/">Play Again</a>
+    {% else %}
+        <form method="post">
+            <button>I've imagined a number</button>
+        </form>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract - Modern OCR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Extract<span class="highlight">.</span></h1>
+            <p>Seamlessly powered by deep learning OCR.</p>
+            <div id="api-status" class="status-badge connecting">Connecting to engine...</div>
+        </header>
+
+        <main class="grid-layout">
+            <div class="upload-section">
+                <div class="drop-zone" id="drop-zone">
+                    <div class="drop-zone-content">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p class="drop-text">Drag & drop your image here</p>
+                        <p class="drop-sub-text">or <span class="browse-link">browse files</span></p>
+                    </div>
+                    <input type="file" id="file-input" accept="image/*" hidden>
+                    <img id="image-preview" class="preview-hidden" alt="Upload preview">
+                </div>
+                
+                <div class="actions">
+                    <button id="extract-btn" class="primary-btn" disabled>Extract Text</button>
+                    <button id="clear-btn" class="secondary-btn">Clear</button>
+                </div>
+            </div>
+
+            <div class="result-section">
+                <div class="result-header">
+                    <h2>Extracted Text</h2>
+                    <button id="copy-btn" class="icon-btn" title="Copy to clipboard">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="result-container" id="result-container">
+                    <div class="placeholder">
+                        <p>Upload an image and hit extract to see the magic happen.</p>
+                    </div>
+                    <div class="loading-overlay hidden" id="loading-overlay">
+                        <div class="spinner"></div>
+                        <p>Analyzing image...</p>
+                    </div>
+                    <textarea id="result-text" readonly class="hidden"></textarea>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <div id="toast" class="toast hidden">Copied to clipboard!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

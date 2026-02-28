@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Predictor</title>
+</head>
+<body>
+    <h1>Student Pass/Fail Predictor</h1>
+
+    <form action="/predict" method="post">
+        <label>Study Hours:</label><br>
+        <input type="number" name="hours" required><br><br>
+
+        <label>Attendance (%):</label><br>
+        <input type="number" name="attendance" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
